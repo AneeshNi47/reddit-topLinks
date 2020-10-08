@@ -31,7 +31,7 @@ export const getPost = subreddit_url => (dispatch, getState) => {
         type: GET_POSTS,
         payload: res.data.data.children
       });
-      console.log(res.data.data.children[0]);
+      console.log(res.data.data.children);
     })
     .catch(err =>
       dispatch(returnErrors(err.response.data, err.response.status))
