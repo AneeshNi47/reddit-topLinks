@@ -82,6 +82,7 @@ class getPostsData(APIView):
             self.request.query_params.get('subreddit_display_name'))
         main_count = 0
         domains = {}
+        users = {}
         colors = getColor()
         pieColor = []
         pieColorlight = []
@@ -97,8 +98,15 @@ class getPostsData(APIView):
                     domains[submission.domain] += 1
                 else:
                     domains[submission.domain] = 1
+                if submission.author in users:
+                    users[submission.author] += 1
+                else:
+                    users[submission.author] = 1
+        top_user = max(users, key=users.get)
+        user_name = str(top_user)
+        print(type(user_name))
         for domain, count in domains.items():
-            if count > 1:
+            if count > 0.02*int(self.request.query_params.get('post_limit')):
                 domain_name.append(domain)
                 domain_name_count.append(count)
         return JsonResponse({
@@ -111,5 +119,6 @@ class getPostsData(APIView):
                 }
             ],
             "linkPost_count": main_count,
-            "total_postCount": self.request.query_params.get('post_limit')
+            "total_postCount": self.request.query_params.get('post_limit'),
+            "top_user": user_name
         })

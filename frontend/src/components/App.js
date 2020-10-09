@@ -24,7 +24,7 @@ class App extends Component {
         <AlertProvider template={AlertTemplate} {...alertOptions}>
           <Router>
             <OwnHeader />
-            <Container>
+            <Container fluid>
               <Route exact path="/login" component={Login} />
               <Switch>
                 <PrivateRoute exact path="/" component={Dashboard} />
