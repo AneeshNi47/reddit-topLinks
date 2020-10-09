@@ -9,3 +9,4 @@ django-q
 django-rest-knox
 djangorestframework
 django-filter
+praw
