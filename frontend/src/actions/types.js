@@ -12,3 +12,4 @@ export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const GET_SUBREDDITS = "GET_SUBREDDITS";
 export const GET_POSTS = "GET_POSTS";
 export const GET_USERS = "GET_USERS";
+export const GET_POSTSDATA = "GET_POSTSDATA";

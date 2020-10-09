@@ -13,10 +13,8 @@ export class Dashboard extends Component {
   render() {
     return (
       <Fragment>
-        {this.props.user ? <h1>{this.props.user.name}</h1> : ""}
-        <Segment>
-          <Subreddits />
-        </Segment>
+        {this.props.user ? <h1>Hello, {this.props.user.name}</h1> : ""}
+        <Subreddits />
       </Fragment>
     );
   }

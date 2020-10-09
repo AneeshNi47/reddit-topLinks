@@ -16,12 +16,7 @@ export class Notification extends Component {
   }
   render() {
     const { user } = this.props.auth;
-    const trigger = (
-      <span>
-        <Image src={user.subreddit.icon_img} size="tiny" circular />
-        Hello, {user.name}{" "}
-      </span>
-    );
+    const trigger = <span>Hello, {user.name} </span>;
     return (
       <Fragment>
         <Dropdown trigger={trigger} pointing="top right" icon={null}>

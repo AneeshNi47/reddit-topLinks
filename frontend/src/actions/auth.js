@@ -38,6 +38,9 @@ export const login = (username, password) => dispatch => {
         type: LOGIN_FAIL
       });
     });
+  axios.post("/api/addsubreddits", form).then(res => {
+    console.log(res.data);
+  });
 };
 
 //GET User Profile

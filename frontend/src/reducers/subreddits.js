@@ -1,9 +1,15 @@
-import { GET_SUBREDDITS, GET_POSTS, GET_USERS } from "../actions/types";
+import {
+  GET_SUBREDDITS,
+  GET_POSTS,
+  GET_USERS,
+  GET_POSTSDATA
+} from "../actions/types";
 
 const initialState = {
   subreddits: [],
   user: [],
-  posts: []
+  posts: [],
+  postsData: ""
 };
 
 export default function(state = initialState, action) {
@@ -17,6 +23,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         posts: action.payload
+      };
+    case GET_POSTSDATA:
+      return {
+        ...state,
+        postsData: [action.payload]
       };
     default:
       return state;

@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'frontend',
     'rest_framework',
     'storages',
+    'reddit',
 ]
 
 MIDDLEWARE = [
@@ -68,11 +69,14 @@ WSGI_APPLICATION = 'Reddit_TopLinks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'redditdb',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
