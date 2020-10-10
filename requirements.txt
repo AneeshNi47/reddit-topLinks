@@ -1,9 +1,6 @@
 django
 gunicorn
 django-heroku
-Pillow
-django-storages
-boto3
 requests
 django-q
 django-rest-knox
